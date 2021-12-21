@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head') %> 
+  <body>
+    <% if (locals.nombreUsuario) { %>
+      <div>
+        <p>Hola <b><%= nombreUsuario %></b>, elegiste el color: <b><%= colorUsuario %></b>, tu email es: <b><%= emailUsuario %></b> y tu edad es: <b><%= edadUsuario %></b>.</p>
+        <a href="/user">Presiona el boton</a>
+        <a href="/user/reset">Olvidar el color</a>
+      </div>
+    <% } %>
+    <div>
+      <form action="/" method="get">
+        <label for="name">Ingrese su nombre</label>
+        <input type="text" name="nombreUsuario" id="name" value="<%= locals.old && locals.old.nombreUsuario? old.nombreUsuario : '' %>">
+        <span><%= locals.errors && locals.errors.nombreUsuario? errors.nombreUsuario.msg : '' %></span>
+
+        <label for="colour">Color de fondo</label>
+        <select id="colour" name="colorUsuario">
+          <option value="none"></option>
+        </select>
+        <span><%= locals.errors && locals.errors.colorUsuario? errors.colorUsuario.msg : '' %></span>
+  
+        <label for="email">Ingrese su email</label>
+        <input type="email" name="emailUsuario" id="email">
+        <span><%= locals.errors && locals.errors.emailUsuario? errors.emailUsuario.msg : '' %></span>
+  
+        <label for="age">Ingrese su edad</label>
+        <input type="number" name="edadUsuario" id="age">
+        <span><%= locals.errors && locals.errors.edadUsuario? errors.edadUsuario.msg : '' %></span>
+  
+        <label for="remember"></label>
+        <input type="checkbox" name="recColor" id="remember">
+
+        <input type="submit" class="button" value="Enviar">
+      </form>
+    </div>
+    
+  </body>
+</html>

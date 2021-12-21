@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+a {
+  color: #00B7FF;
+}
+
+form {
+  background-color: lightseagreen;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 300px;
+  padding: 10px 30px 20px;
+}
+
+form label {margin: 20px 0 10px;}
+
+form input, form select {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+form .button {
+  background-color: lightsalmon;
+  border: 1px solid darkslategrey;
+  color: darkslategrey;
+  border-radius: 5px;
+  margin: 40px 0 10px;
+}
